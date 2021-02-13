@@ -59,6 +59,9 @@ E.g., python3 Microbrewery.py -i example/2FLGA.fasta
 # Set the absolute PATHs to the query sequences
 $ docker run --name microbrewery -v /**PATH_to_fasta_to_predict**:/Microbrewery/query \
 --cap-add IPC_LOCK mircare/microbrewery sleep infinity &
+
+# Run Microbrewery
+$ docker exec microbrewery python3 Microbrewery.py -i query/2FLGA.fasta
 ```
 
 ## Performances on the 2019_test set of 618 proteins
