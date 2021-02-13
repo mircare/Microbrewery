@@ -37,4 +37,5 @@ while i < len(fasta):
 
 f.close()
 
-print("Done. You can find the splitted fasta files inside Fastas/. Please run multiple_fasta.py now. E.g., python3 multiple_fasta.py -i Fastas --cpu 4 --parallel 2.")
+print("Done. The splitted fasta files are inside Fastas/.\n\
+To launch the prediction: python3 %s/multiple_fasta.py -i Fastas --cpu 4" % (os.path.dirname(sys.argv[0])))

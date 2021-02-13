@@ -8,3 +8,5 @@ scripts/Predict_BRNN/Predict_probs.o
 scripts/Predict_BRNN/Predict
 # Config file
 scripts/config.ini
+# local files
+scripts/Predict_BRNN/models/model*_*
