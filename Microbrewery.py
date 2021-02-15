@@ -244,7 +244,10 @@ if not args.noTA:
             tmp = [round((24*probs22[j+k]+16*probs44[j+k])/40, 4) for k in range(classes)]
             index = tmp.index(max(tmp))
             k = int(j/classes)
-            prediction.write(str(k+1)+"\t"+aa[i][k]+"\t"+toChar[index]+"\t"+str(tmp[0])+"\t"+str(tmp[1])+"\t"+str(tmp[2])+"\n")
+            prediction.write(str(k+1)+"\t"+aa[i][k]+"\t"+toChar[index]+"\t"+str(tmp[0])+"\t"+str(tmp[1])+\
+                "\t"+str(tmp[2])+"\t"+str(tmp[3])+"\t"+str(tmp[4])+"\t"+str(tmp[5])+"\t"+str(tmp[6])+\
+                "\t"+str(tmp[7])+"\t"+str(tmp[8])+"\t"+str(tmp[9])+"\t"+str(tmp[10])+"\t"+str(tmp[11])+\
+                "\t"+str(tmp[12])+"\t"+str(tmp[13])+"\n")
         prediction.write("\n\n")
     prediction.close()
 
@@ -333,7 +336,8 @@ if not args.noCD:
             tmp = [round((9*probs22[j+k]+2*probs44[j+k])/11, 4) for k in range(classes)]
             index = tmp.index(max(tmp))
             k = int(j/classes)
-            prediction.write(str(k+1)+"\t"+aa[i][k]+"\t"+toChar[index]+"\t"+str(tmp[0])+"\t"+str(tmp[1])+"\t"+str(tmp[2])+"\n")
+            prediction.write(str(k+1)+"\t"+aa[i][k]+"\t"+toChar[index]+"\t"+str(tmp[0])+"\t"+str(tmp[1])+
+                "\t"+str(tmp[2])+"\t"+str(tmp[3])+"\n")
         prediction.write("\n\n")
     prediction.close()
     
