@@ -11,12 +11,12 @@ if sys.version_info[0] < 3:
    exit()
 
 ### set argparse
-parser = argparse.ArgumentParser(description="This is the standalone of Microbrewery. Run it on a FASTA file to predict its Secondary Structure in 3- and 8-classes (Porter5), Solvent Accessibility in 4 classes (PaleAle5), Torsional Angles in 14 classes (Porter+5) and Contact Density in 4 classes (BrownAle).",
+parser = argparse.ArgumentParser(description="This is the standalone of Microbrewery. Run it on a FASTA file to predict its Secondary Structure in 3- and 8-classes (Porter5), Solvent Accessibility in 4 classes (PaleAle5), Structural Motifs in 14 classes (Porter+5) and Contact Density in 4 classes (BrownAle).",
 epilog="E.g., python3 Microbrewery.py -i example/2FLGA.fasta")
 parser.add_argument("-input", metavar='fasta_file', type=str, nargs=1, help="FASTA file containing the protein to predict")
 # parser.add_argument("--cpu", type=int, default=1, help="How many cores to perform this prediction")
 parser.add_argument("--noSS", help="Skip Secondary Structure prediction", action="store_true")
-parser.add_argument("--noTA", help="Skip Torsional Angles prediction", action="store_true")
+parser.add_argument("--noTA", help="Skip Structural Motifs prediction", action="store_true")
 parser.add_argument("--noSA", help="Skip Solvent Accessibility prediction", action="store_true")
 parser.add_argument("--noCD", help="Skip Contact Density prediction", action="store_true")
 parser.add_argument("--setup", help="Initialize Microbrewery from scratch (e.g., required when it is moved).", action="store_true")
@@ -225,7 +225,7 @@ if not args.noTA:
     os.system('%s %smodelv22_ta14 %s.ann22 > /dev/null' % (predict, models, filename))
     os.system('%s %smodelv44_ta14 %s.ann44 > /dev/null' % (predict, models, filename))
     
-    print('Torsion Angles in %d classes predicted in %.2fs' % (classes, (time.time()-time0TA)))
+    print('Structural Motifs in %d classes predicted in %.2fs' % (classes, (time.time()-time0TA)))
 
     ### ensemble TA predictions and process output
     toChar = {0 : "b", 1 : "h", 2 : "H", 3 : "I", 4 : "C", 5 : "e", 6 : "E", 7 : "S", 8 : "t", 9 : "g", 10 : "T", 11 : "B", 12 : "s", 13 : "i"}
