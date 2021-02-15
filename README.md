@@ -38,14 +38,14 @@ usage: Microbrewery.py [-h] [-input fasta_file] [--noSS] [--noTA] [--noSA]
 
 This is the standalone of Microbrewery. Run it on a FASTA file to predict its
 Secondary Structure in 3- and 8-classes (Porter5), Solvent Accessibility in 4
-classes (PaleAle5), Torsional Angles in 14 classes (Porter+5) and Contact
+classes (PaleAle5), Structural Motifs in 14 classes (Porter+5) and Contact
 Density in 4 classes (BrownAle5).
 
 optional arguments:
   -h, --help         show this help message and exit
   -input fasta_file  FASTA file containing the protein to predict
   --noSS             Skip Secondary Structure prediction
-  --noTA             Skip Torsional Angles prediction
+  --noTA             Skip Structural Motifs prediction
   --noSA             Skip Solvent Accessibility prediction
   --noCD             Skip Contact Density prediction
   --setup            Initialize Microbrewery from scratch (e.g., required when
