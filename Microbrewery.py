@@ -92,14 +92,13 @@ with open(filename+".ann22", "w") as ann22:
             ann44.write("pid"+str(i)+"\n"+str(len(line))+"\n")
             
             for c in line:
-                ann22.write(AA[c])
-                ann44.write(AA[c]+AA[c])
+                val = AA.get(c, "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 ")
+                ann22.write(val)
+                ann44.write(val+val)
             tmp = "0 " * len(line)
             ann22.write("\n"+tmp+"\n\n")
             ann44.write("\n"+tmp+"\n\n")
 
-# time1 = time.time()
-# print('Fasta processed in %.2fs' % (time1-time0))
 
 
 ###############################################
